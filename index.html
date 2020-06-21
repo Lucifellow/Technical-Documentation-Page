@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta charset="UTF-8">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<Title>
+			Python Technical Documentation
+		</Title>
+	</head>
+	
+	<body>
+		<main id="main-doc">
+			<nav id="navbar">
+				<header id="header"> 
+					<h1>Python Technical Documentation</h1>
+				</header>
+				<ul>
+					<li><a class="nav-link" id="introduction-link" href="#introduction">Introduction</a></li>
+					<li><a class="nav-link" id="number-link" href="#numbers">Numbers</a></li>
+					<li><a class="nav-link" id="string-link" href="#strings">Strings</a></li>
+					<li><a class="nav-link" id="list-link" href="#lists">Lists</a></li>
+					<li><a class="nav-link" id="if-link" href="#if_condition">if condition</a></li>
+					<li><a class="nav-link" id="for-link" href="#for_loop">for loop</a></li>
+					<li><a class="nav-link" id="function-link" href="#functions">Functions</a></li>
+					<li><a class="nav-link" id="dictionary-link" href="#dictionaries">Dictionaries</a></li>
+					<li><a class="nav-link" id="syntax-link" href="#syntax_errors">Syntax Errors</a></li>
+					<li><a class="nav-link" id="exception-link" href="#exceptions">Exceptions</a></li>
+					<li><a class="nav-link" id="reference-link" href="#references">References</a></li>
+				</ul>
+			</nav>
+			<section  id="introduction" class="main-section">
+				<header><h2>Introduction</h2></header>
+				<p>If you do much work on computers, eventually you find that there’s some task you’d like to automate. For example, you may wish to perform a search-and-replace over a large number of text files, or rename and rearrange a bunch of photo files in a complicated way. Perhaps you’d like to write a small custom database, or a specialized GUI application, or a simple game.
+				</p>
+				<p>If you’re a professional software developer, you may have to work with several C/C++/Java libraries but find the usual write/compile/test/re-compile cycle is too slow. Perhaps you’re writing a test suite for such a library and find writing the testing code a tedious task. Or maybe you’ve written a program that could use an extension language, and you don’t want to design and implement a whole new language for your application.
+				</p>
+				<p>Python is simple to use, but it is a real programming language, offering much more structure and support for large programs than shell scripts or batch files can offer. On the other hand, Python also offers much more error checking than C, and, being a very-high-level language, it has high-level data types built in, such as flexible arrays and dictionaries. Because of its more general data types Python is applicable to a much larger problem domain than Awk or even Perl, yet many things are at least as easy in Python as in those languages.
+				</p>
+				<p>Python is an interpreted language, which can save you considerable time during program development because no compilation and linking is necessary. The interpreter can be used interactively, which makes it easy to experiment with features of the language, to write throw-away programs, or to test functions during bottom-up program development. It is also a handy desk calculator.
+				</p>
+				<p>
+				Python enables programs to be written compactly and readably. Programs written in Python are typically much shorter than equivalent C, C++, or Java programs, for several reasons:
+				</p>
+				<ul id="introdesc">
+				<li>the high-level data types allow you to express complex operations in a single statement;</li>
+				<li>statement grouping is done by indentation instead of beginning and ending brackets;</li>
+				<li>no variable or argument declarations are necessary;</li>
+				<li>no memory management is required;</li>
+				<li>garbage collection is done by Python automatically.</li>
+				</ul>
+			</section>
+	
+			<section id="numbers" class="main-section">
+				<header><h2>Numbers</h2></header>
+				<p>The interpreter acts as a simple calculator: you can type an expression at it and it will write the value. Expression syntax is straightforward: the operators +, -, * and / work just like in most other languages (for example, Pascal or C); parentheses (()) can be used for grouping. For example:
+				</p>
+				<p class="code-block">>>> <code>2 + 2</code><br>
+					4<br>
+					>>> <code>50 - 5*6</code><br>
+					20<br>
+					>>> (50 - 5*6) / 4<br>
+					5.0<br>
+					>>> 17 % 3  <br>
+					2
+				</p>
+				<p>
+					Division (/) always returns a float. To do floor division and get an integer result (discarding any fractional result) you can use the // operator; to calculate the remainder you can use %.
+				</p>
+			</section>
+	
+			<section id="strings" class="main-section">
+				<header><h2>Strings</h2></header>
+				<p>Besides numbers, Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes ('...') or double quotes ("...") with the same result 2. \ can be used to escape quotes:
+				</p>
+				<p class="code-block">
+				>>> <code>'spam eggs'  # single quotes</code><br>
+				'spam eggs'<br>
+				>>> 'doesn\'t'   # use \' to escape the single quote...<br>
+				"doesn't"<br>
+				>>> "doesn't"   # ...or use double quotes instead<br>
+				"doesn't"<br>
+				>>> <code>'"Yes," they said.'</code><br>
+				'"Yes," they said.'<br>
+				>>> "\"Yes,\" they said."<br>
+				'"Yes," they said.'<br>
+				>>> '"Isn\'t," they said.'<br>
+				'"Isn\'t," they said.'
+				</p>
+				<p>
+				In the interactive interpreter, the output string is enclosed in quotes and special characters are escaped with backslashes. While this might sometimes look different from the input (the enclosing quotes could change), the two strings are equivalent. The string is enclosed in double quotes if the string contains a single quote and no double quotes, otherwise it is enclosed in single quotes. The <code>print()</code> function produces a more readable output, by omitting the enclosing quotes and by printing escaped and special characters:
+				</p>
+				<p class="code-block">
+				>>> '"Isn\'t," they said.'<br>
+				'"Isn\'t," they said.'<br>
+				>>> print('"Isn\'t," they said.')<br>
+				"Isn't," they said.<br>
+				>>> s = 'First line.\nSecond line.'  # \n means newline<br>
+				>>> s  # without print(), \n is included in the output<br>
+				'First line.\nSecond line.'<br>
+				>>> print(s)  # with print(), \n produces a new line<br>
+				First line.<br>
+				Second line.<br>
+				</p>
+			</section>
+			
+			<section  id="lists" class="main-section">
+				<header><h2>Lists</h2></header>
+				<p>
+				Python knows a number of compound data types, used to group together other values. The most versatile is the list, which can be written as a list of comma-separated values (items) between square brackets. Lists might contain items of different types, but usually the items all have the same type.
+				</p>
+				<p class="code-block">
+				>>> squares = [1, 4, 9, 16, 25]<br>
+				>>> squares<br>
+				[1, 4, 9, 16, 25]<br>
+				</p>
+				<p>
+				Like strings (and all other built-in sequence types), lists can be indexed and sliced:
+				</p>
+				<p class="code-block">
+				>>> squares[0]  # indexing returns the item <br>
+				1 <br>
+				>>> squares[-1]<br>
+				25<br>
+				>>> squares[-3:]  # slicing returns a new list<br>
+				[9, 16, 25]<br>
+				</p>
+			</section>
+			
+			<section  id="if_condition" class="main-section">
+				<header><h2>If condition</h2></header>
+				<p>
+					Perhaps the most well-known statement type is the if statement. For example:
+				</p>
+				<p class="code-block">
+				>>> x = int(input("Please enter an integer: "))<br>
+				Please enter an integer: 42<br>
+				>>> if x < 0:<br>
+				........x = 0<br>
+				..........print('Negative changed to zero')<br>
+				....elif x == 0:<br>
+				........print('Zero')<br>
+				....elif x == 1:<br>
+				........print('Single')<br>
+				....else:<br>
+				........print('More')<br>
+				...<br>
+				More<br>
+				</p>
+				<p>
+				There can be zero or more elif parts, and the else part is optional. The keyword ‘elif’ is short for ‘else if’, and is useful to avoid excessive indentation. An if … elif … elif … sequence is a substitute for the switch or case statements found in other languages.
+				</p>
+			</section>
+			
+			<section  id="for_loop" class="main-section">
+				<header><h2>for Loop</h2></header>
+				<p>
+				The for statement in Python differs a bit from what you may be used to in C or Pascal. Rather than always iterating over an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as C), Python’s for statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. For example (no pun intended):
+				</p>
+				<p class="code-block">
+				>>> # Measure some strings:<br>
+				....words = ['cat', 'window', 'defenestrate']<br>
+				>>>for w in words:<br>
+				.........print(w, len(w))<br>
+				...<br>
+				cat 3<br>
+				window 6<br>
+				defenestrate 12
+				</p>
+			</section>
+			<section  id="functions" class="main-section">
+				<header><h2>Functions</h2></header>
+				<p>
+				We can create a function that writes the Fibonacci series to an arbitrary boundary:
+				</p>
+				<p class="code-block">
+				>>> def fib(n):    # write Fibonacci series up to n<br>
+				................."""Print a Fibonacci series up to n."""<br>
+				.................a, b = 0, 1<br>
+				.................while a < n:<br>
+				....................print(a, end=' ')<br>
+				....................a, b = b, a+b<br>
+				..................print()<br>
+				...<br>
+				>>> # Now call the function we just defined:<br>
+				... fib(2000)<br>
+				0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
+				</p>
+				
+				<p>
+				The keyword def introduces a function definition. It must be followed by the function name and the parenthesized list of formal parameters. The statements that form the body of the function start at the next line, and must be indented.
+				</p>
+				
+				<p>
+				The first statement of the function body can optionally be a string literal; this string literal is the function’s documentation string, or docstring. (More about docstrings can be found in the section Documentation Strings.) There are tools which use docstrings to automatically produce online or printed documentation, or to let the user interactively browse through code; it’s good practice to include docstrings in code that you write, so make a habit of it.
+				</p>
+				
+				<p>
+				The execution of a function introduces a new symbol table used for the local variables of the function. More precisely, all variable assignments in a function store the value in the local symbol table; whereas variable references first look in the local symbol table, then in the local symbol tables of enclosing functions, then in the global symbol table, and finally in the table of built-in names. Thus, global variables and variables of enclosing functions cannot be directly assigned a value within a function (unless, for global variables, named in a global statement, or, for variables of enclosing functions, named in a nonlocal statement), although they may be referenced.
+				</p>
+				
+			</section>
+			
+			<section  id="dictionaries" class="main-section">
+				<header><h2>Dictionaries</h2></header>
+				<p>
+				Another useful data type built into Python is the dictionary (see Mapping Types — dict). Dictionaries are sometimes found in other languages as “associative memories” or “associative arrays”. Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by keys, which can be any immutable type; strings and numbers can always be keys. Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. You can’t use lists as keys, since lists can be modified in place using index assignments, slice assignments, or methods like append() and extend().
+				</p>
+				<p>
+				It is best to think of a dictionary as a set of key: value pairs, with the requirement that the keys are unique (within one dictionary). A pair of braces creates an empty dictionary: {}. Placing a comma-separated list of key:value pairs within the braces adds initial key:value pairs to the dictionary; this is also the way dictionaries are written on output.
+				</p>
+				<p>
+				Performing list(d) on a dictionary returns a list of all the keys used in the dictionary, in insertion order (if you want it sorted, just use sorted(d) instead). To check whether a single key is in the dictionary, use the in keyword. Here is a small example using a dictionary:
+				</p>
+				<p class="code-block">
+				>>> tel = {'jack': 4098, 'sape': 4139}<br>
+				>>> tel['guido'] = 4127<br>
+				>>> tel<br>
+				{'jack': 4098, 'sape': 4139, 'guido': 4127}<br>
+				>>> tel['jack']<br>
+				4098<br>
+				>>> del tel['sape']<br>
+				>>> tel['irv'] = 4127<br>
+				>>> tel<br>
+				{'jack': 4098, 'guido': 4127, 'irv': 4127}
+				</p>
+			</section>
+			
+			<section  id="syntax_errors" class="main-section">
+				<header><h2>Syntax Errors</h2></header>
+				<p>
+				Syntax errors, also known as parsing errors, are perhaps the most common kind of complaint you get while you are still learning Python:
+				</p>
+				<p class="code-block">
+				>>> while True print('Hello world')<br>
+				.....File "<stdin>", line 1<br>
+				.....while True print('Hello world')<br>
+				..................^<br>
+				SyntaxError: invalid syntax
+				</p>
+				<p>
+				The parser repeats the offending line and displays a little ‘arrow’ pointing at the earliest point in the line where the error was detected. The error is caused by (or at least detected at) the token preceding the arrow: in the example, the error is detected at the function print(), since a colon (':') is missing before it. File name and line number are printed so you know where to look in case the input came from a script.
+				</p>
+			</section>
+			<section  id="exceptions" class="main-section">
+				<header><h2>Exceptions</h2></header>
+				<p>
+				Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. Errors detected during execution are called exceptions and are not unconditionally fatal: you will soon learn how to handle them in Python programs. Most exceptions are not handled by programs, however, and result in error messages as shown here:
+				</p>
+				<p class="code-block">
+				>>> 10 * (1/0)<br>
+				Traceback (most recent call last):<br>
+				....File "<stdin>", line 1, in <module><br>
+				ZeroDivisionError: division by zero<br>
+				>>> 4 + spam*3<br>
+				Traceback (most recent call last):<br>
+				....File "<stdin>", line 1, in <module><br>
+				NameError: name 'spam' is not defined<br>
+				>>> '2' + 2<br>
+				Traceback (most recent call last):<br>
+				....File "<stdin>", line 1, in <module><br>
+				TypeError: Can't convert 'int' object to str implicitly
+				</p>
+				<p>
+				The last line of the error message indicates what happened. Exceptions come in different types, and the type is printed as part of the message: the types in the example are ZeroDivisionError, NameError and TypeError. The string printed as the exception type is the name of the built-in exception that occurred. This is true for all built-in exceptions, but need not be true for user-defined exceptions (although it is a useful convention). Standard exception names are built-in identifiers (not reserved keywords).
+				</p>
+			</section>
+			<section  id="references" class="main-section">
+				<header><h2>References</h2></header>
+				<p>
+				All information and codes on this webpage is taken from <a id="python-link" href="https://docs.python.org/3/tutorial/" target="_blank">Python Docs</a>
+				</p>
+			</section>
+	
+		</main>
+	</body>
+</html>
